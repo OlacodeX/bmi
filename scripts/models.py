@@ -1,11 +1,11 @@
 # models for face2bmi project
 
 # keras vggface model
-from tensorflow.keras.models import Model
+from keras.models import Model
 from keras.layers import Flatten, Dense, Input, Dropout, Activation, BatchNormalization
 from keras_vggface.vggface import VGGFace
 from keras_vggface import utils
-from keras.utils import load_img, img_to_array
+from keras.preprocessing.image import load_img, img_to_array
 #from tensorflow.keras.preprocessing import image
 
 # image manipulation
