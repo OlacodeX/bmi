@@ -5,12 +5,12 @@ numpy
 matplotlib
 seaborn
 gunicorn
-tensorflow
+tensorflow==2.5
 opencv-python
 mtcnn
 Pillow
 keras_vggface
-keras
+keras==2.4.3
 Click
 tqdm
 keras_applications
