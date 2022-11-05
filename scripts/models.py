@@ -5,7 +5,7 @@ from keras.models import Model
 from keras.layers import Flatten, Dense, Input, Dropout, Activation, BatchNormalization
 from keras_vggface.vggface import VGGFace
 from keras_vggface import utils
-from keras.preprocessing.image import load_img, img_to_array
+from keras.preprocessing import image
 #from tensorflow.keras.preprocessing import image
 
 # image manipulation
@@ -72,8 +72,8 @@ def img2arr(img_path, version):
     Return:
         np.array
     """
-    img = load_img(img_path)
-    img = img_to_array(img)
+    img = image.load_img(img_path)
+    img = image.img_to_array(img)
     img = process_arr(img, version)
     return img
 
@@ -187,8 +187,8 @@ class FacePrediction(object):
         self.model.load_weights(model_dir)
     
     def detect_faces(self, face_path, confidence):
-        img = load_img(face_path)
-        img = img_to_array(img)
+        img = image.load_img(face_path)
+        img = image.img_to_array(img)
         box = self.detector.detect_faces(img)
         box = [i for i in box if i['confidence'] > confidence]
         res = [crop_img(img, *i['box']) for i in box]
