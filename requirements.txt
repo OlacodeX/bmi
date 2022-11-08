@@ -14,3 +14,4 @@ keras==2.8.0
 Click
 tqdm
 keras_applications
+Keras_preprocessing
